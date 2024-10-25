@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter at Your Own Risk</title>
+  <meta name="title" content="Little-Scary Website Loader with Homepage - Unique and Engaging Animations">
+  <meta name="description" content="Explore a creatively spooky website loader animation that transitions to a beautifully designed homepage. Fast, responsive, and SEO optimized for a better user experience.">
+  <meta name="keywords" content="scary website loader, spooky loader animation, animated loading screen, homepage design, web animations, responsive design, fast website, SEO optimized, user engagement">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Anas Ahson">
+
+</head>
+<body>
+  
+  <!-- Loader Section -->
+  <div id="loader">
+    <div class="navbar">
+      <span>WARNING</span>
+      <span>ENTER</span>
+      <span>YOUR</span>
+      <span>OWN</span>
+      <span>RISK</span>
+    </div>
+    
+    <div class="warning-text">Warning: Enter at your own risk...</div>
+    
+    <div class="flicker-container">
+      <div class="shadowy-figure"></div>
+      <img src="b.jpg" class="glitch-image" alt="Distorted Face">
+      <img src="c.jpg" class="blood-splatter" alt="Blood Splatter">
+    </div>
+  </div>
+
+  <!-- Main Content Section -->
+  <div id="content">
+    <div class="text-container">
+      <h1>WARNING</h1>
+      <h2>ENTER AT YOUR OWN RISK</h2>
+      <p class="warning-small">Enter at your own risk. Unknown dangers await. Proceed with caution...</p>
+      <button class="enter-btn"> <img src="inocent.jpg" width="20" alt="">WELCOME</button>
+    </div>
+  </div>
+
+  <!-- Black Screen Transition -->
+  <div id="black-screen"></div>
+
+  <!-- Video Section -->
+  <div id="video-container">
+    <video id="scaryVideo" width="100%" autoplay muted>
+      <source src="Untitled design.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div id="after-video-content">
+      <button id="dummy-btn"><img src="dummy-image.jpg" alt="Dummy Image"> DUMMY TEXT</button>
+    </div>
+  </div>
+
+  <!-- Full Screen Light Animation -->
+  <div id="light-animation">
+   
+  </div>
+  <div id="upload-container">
+    <div id="upload-title">Uploading Files...</div>
+    <div id="progress-bar">
+      <div id="progress"></div>
+    </div>
+    <div id="upload-status">1% - Uploading <span id="file-name">C:\Windows\System32\important.dll</span></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<style>
+  /* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url('creepy_background_image.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+}
+
+/* Loader Styles */
+#loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(255, 0, 0, 0.5);
+  padding: 10px;
+  width: 100%;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: red;
+  position: absolute;
+  top: 0;
+}
+
+/* Glitch Effect for Warning Text */
+.warning-text {
+  font-size: 2.5rem;
+  color: red;
+  letter-spacing: 8px;
+  opacity: 0;
+  animation: textGlitch 2.5s infinite ease-in-out;
+  text-shadow: 3px 3px 20px red, -3px -3px 20px black;
+}
+
+@keyframes textGlitch {
+  0% { opacity: 0; transform: translateX(-30px) skewX(10deg); }
+  50% { opacity: 1; transform: translateX(0) skewX(-5deg); }
+  100% { opacity: 0; transform: translateX(50px) skewX(5deg); }
+}
+
+/* Animations for Flickering Images and Figure */
+.flicker-container {
+  position: relative;
+  margin-top: 20px;
+}
+
+.glitch-image, .blood-splatter {
+  width: 300px;
+  position: absolute;
+  opacity: 0;
+}
+
+.glitch-image {
+  animation: glitchAnimation 4s infinite ease-in-out;
+}
+
+.blood-splatter {
+  animation: bloodSplatter 6s infinite ease-in-out;
+  transform: rotate(45deg);
+}
+
+.shadowy-figure {
+  width: 100px;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+  animation: shadowMovement 6s infinite ease-in-out;
+}
+
+@keyframes glitchAnimation {
+  0%, 100% { opacity: 0; transform: scale(1) translateY(0); }
+  20%, 60% { opacity: 1; transform: scale(1.1) rotate(-5deg) translateY(-10px); }
+  40%, 80% { opacity: 0.8; transform: scale(0.9) rotate(5deg) translateY(10px); }
+}
+
+@keyframes bloodSplatter {
+  0%, 100% { opacity: 0; transform: scale(1) rotate(45deg); }
+  50% { opacity: 0.9; transform: scale(1.1) rotate(45deg); }
+}
+
+@keyframes shadowMovement {
+  0% { transform: translateX(-50px) translateY(-50px); }
+  50% { transform: translateX(50px) translateY(50px); }
+  100% { transform: translateX(-50px) translateY(-50px); }
+}
+
+/* Main Content Section */
+#content {
+  display: none;
+  text-align: center;
+  margin-top: 20%;
+}
+
+h1, h2, p.warning-small {
+  text-shadow: 3px 3px 15px red, 3px -3px 15px black;
+}
+
+.enter-btn {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-image:url(inocent.jpg) ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.enter-btn img {
+  margin-right: 10px;
+}
+
+.enter-btn:hover {
+  background-color: darkred;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Black Screen and Video Section */
+#black-screen {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 100;
+  display: none;
+  animation: slideBlackScreen 2s forwards;
+}
+
+#video-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 200;
+}
+
+#after-video-content {
+  display: none;
+  text-align: center;
+}
+
+#dummy-btn {
+  padding: 20px;
+  background: red;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#dummy-btn img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+/* Light Spread Effect */
+#light-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(white, transparent);
+  opacity: 0;
+  z-index: 300;
+  display: none;
+  animation: spreadLight 3s forwards;
+}
+
+@keyframes spreadLight {
+  0% { opacity: 0; transform: scale(0); }
+  100% { opacity: 1; transform: scale(10); }
+}
+
+@keyframes slideBlackScreen {
+  0% { left: -100%; }
+  100% { left: 0; }
+}
+
+</style>
+<script>
+  window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  const content = document.getElementById('content');
+
+  setTimeout(() => {
+    loader.style.display = 'none';
+    content.style.display = 'block';
+  }, 6000); // Display content after 6 seconds
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const enterBtn = document.querySelector('.enter-btn');
+  const blackScreen = document.getElementById('black-screen');
+  const videoContainer = document.getElementById('video-container');
+  const scaryVideo = document.getElementById('scaryVideo');
+  const lightAnimation = document.getElementById('light-animation');
+  const afterVideoContent = document.getElementById('after-video-content');
+
+  enterBtn.addEventListener('click', () => {
+    blackScreen.style.display = 'block';
+    blackScreen.style.animation = 'slideBlackScreen 2s forwards';
+
+    // After 2 seconds, show the video
+    setTimeout(() => {
+      blackScreen.style.display = 'none';
+      videoContainer.style.display = 'block';
+    }, 2000);
+
+    // When the video ends, show the dummy button and light effect
+    scaryVideo.addEventListener('ended', () => {
+      afterVideoContent.style.display = 'block';
+      lightAnimation.style.display = 'block';
+    });
+  });
+});
+
+</script>
+<style>
+  Container for the fake upload UI */
+#upload-container {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border: 1px solid #00FF00;
+  width: 300px;
+  z-index: 1000;
+  font-size: 0.9rem;
+}
+
+/* Title for the fake upload UI */
+#upload-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Progress bar container */
+#progress-bar {
+  width: 100%;
+  background-color: #333;
+  border: 1px solid white  ;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+/* Progress bar itself */
+#progress {
+  width: 0;
+  height: 100%;
+  background-color: red;
+  animation: fakeProgress 15s linear forwards;
+}
+
+/* Upload status message */
+#upload-status {
+  font-size: 0.8rem;
+}
+
+/* Glitchy text effect for file name */
+#file-name {
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+}
+
+/* Progress bar animation */
+@keyframes fakeProgress {
+  0% { width: 0%; }
+  10% { width: 10%; }
+  30% { width: 30%; }
+  50% { width: 50%; }
+  70% { width: 70%; }
+  90% { width: 90%; }
+  100% { width: 100%; }
+}
+
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const progressElement = document.getElementById('progress');
+  const uploadStatus = document.getElementById('upload-status');
+  const fileNameElement = document.getElementById('file-name');
+
+  // Fake file names (to simulate "uploading" from C: drive)
+  const fakeFiles = [
+    "C:\\Windows\\System32\\cmd.exe",
+    "C:\\Windows\\System32\\notepad.exe",
+    "C:\\Windows\\System32\\calc.exe",
+    "C:\\Windows\\System32\\taskmgr.exe",
+    "C:\\Windows\\System32\\drivers\\etc\\hosts",
+    "C:\\Windows\\System32\\services.exe",
+    "C:\\Windows\\System32\\svchost.exe",
+    "C:\\Windows\\System32\\kernel32.dll",
+    "C:\\Windows\\System32\\winlogon.exe",
+    "C:\\Windows\\System32\\hal.dll",
+    "C:\\Windows\\System32\\explorer.exe",
+    "C:\\Windows\\Temp\\tempfile.tmp",
+    "C:\\Windows\\Prefetch\\ntosboot.pf",
+    "C:\\Windows\\System32\\user32.dll",
+    "C:\\Windows\\System32\\shell32.dll",
+    "C:\\Windows\\System32\\msvcrt.dll",
+    "C:\\Windows\\System32\\ntdll.dll",
+    "C:\\Windows\\System32\\advapi32.dll",
+    "C:\\Windows\\System32\\gdi32.dll",
+    "C:\\Windows\\Fonts\\arial.ttf",
+    "C:\\Program Files\\Common Files\\Microsoft Shared\\ink\\mip.exe",
+    "C:\\Program Files\\Internet Explorer\\iexplore.exe",
+    "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+    "C:\\Program Files\\Windows Media Player\\wmplayer.exe",
+    "C:\\Program Files\\Adobe\\Acrobat Reader\\AcroRd32.exe",
+    "C:\\Program Files\\Java\\jre\\bin\\java.exe",
+    "C:\\Program Files\\Microsoft Office\\Office16\\WINWORD.EXE",
+    "C:\\Program Files\\Microsoft Office\\Office16\\EXCEL.EXE",
+    "C:\\Program Files\\Microsoft Office\\Office16\\OUTLOOK.EXE",
+    "C:\\Program Files\\Microsoft Office\\Office16\\POWERPNT.EXE",
+    "C:\\Users\\Admin\\Documents\\confidential.docx",
+    "C:\\Users\\Admin\\Documents\\presentation.pptx",
+    "C:\\Users\\Admin\\Documents\\budget.xlsx",
+    "C:\\Users\\Admin\\Downloads\\setup.exe",
+    "C:\\Users\\Admin\\Downloads\\installer.msi",
+    "C:\\Users\\Admin\\Downloads\\music.mp3",
+    "C:\\Users\\Admin\\Downloads\\video.mp4",
+    "C:\\Users\\Admin\\Pictures\\family_photo.jpg",
+    "C:\\Users\\Admin\\Pictures\\private_photo.jpg",
+    "C:\\Users\\Admin\\Videos\\vacation.mp4",
+    "C:\\Users\\Admin\\Desktop\\shortcut.lnk",
+    "C:\\Users\\Admin\\Desktop\\project_folder\\index.html",
+    "C:\\Users\\Admin\\Desktop\\resume.pdf",
+    "C:\\Users\\Admin\\Desktop\\malware.exe",
+    "C:\\Users\\Admin\\Desktop\\virus.bat",
+    "C:\\Program Files\\Adobe\\Photoshop\\photoshop.exe",
+    "C:\\Program Files\\NVIDIA Corporation\\NvContainer\\nvcontainer.exe",
+    "C:\\Program Files\\Windows Defender\\MpCmdRun.exe",
+    "C:\\Program Files\\Windows Defender\\MsMpEng.exe",
+    "C:\\Program Files (x86)\\Steam\\steam.exe",
+    "C:\\Program Files (x86)\\Battle.net\\Battle.net.exe",
+    "C:\\Program Files (x86)\\Skype\\Phone\\Skype.exe",
+    "C:\\Program Files (x86)\\VLC\\vlc.exe",
+    "C:\\Program Files (x86)\\TeamViewer\\TeamViewer.exe",
+    "C:\\Program Files (x86)\\WinRAR\\WinRAR.exe",
+    "C:\\Program Files (x86)\\7-Zip\\7z.exe",
+    "C:\\Program Files (x86)\\Notepad++\\notepad++.exe",
+    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    "C:\\Users\\Public\\Documents\\shared_file.txt",
+    "C:\\Users\\Public\\Videos\\demo_video.mp4",
+    "C:\\Users\\Public\\Music\\sample_song.mp3",
+    "C:\\Users\\Public\\Pictures\\shared_image.jpg",
+    "C:\\Windows\\System32\\drivers\\tcpip.sys",
+    "C:\\Windows\\System32\\drivers\\volsnap.sys",
+    "C:\\Windows\\System32\\drivers\\mouclass.sys",
+    "C:\\Windows\\System32\\drivers\\kbdclass.sys",
+    "C:\\Windows\\System32\\drivers\\usbstor.sys",
+    "C:\\Windows\\System32\\drivers\\disk.sys",
+    "C:\\Windows\\System32\\drivers\\vboxguest.sys",
+    "C:\\Windows\\System32\\drivers\\afd.sys",
+    "C:\\Windows\\System32\\drivers\\netbt.sys",
+    "C:\\Windows\\System32\\drivers\\ipsec.sys",
+    "C:\\Windows\\System32\\drivers\\mrxsmb.sys",
+    "C:\\Windows\\System32\\drivers\\rdpwd.sys",
+    "C:\\Windows\\System32\\drivers\\wfplwfs.sys",
+    "C:\\Windows\\System32\\drivers\\http.sys",
+    "C:\\Program Files\\Git\\bin\\git.exe",
+    "C:\\Program Files\\Nodejs\\node.exe",
+    "C:\\Program Files\\Python\\python.exe",
+    "C:\\Program Files\\Docker\\docker.exe",
+    "C:\\Program Files\\PostgreSQL\\bin\\psql.exe",
+    "C:\\Program Files\\MySQL\\bin\\mysql.exe",
+    "C:\\Windows\\System32\\wbem\\wmic.exe",
+    "C:\\Windows\\System32\\wbem\\wmiapsrv.exe",
+    "C:\\Windows\\System32\\wbem\\wmiprvse.exe",
+    "C:\\Windows\\System32\\msconfig.exe",
+    "C:\\Windows\\System32\\dxdiag.exe",
+    "C:\\Windows\\System32\\eventvwr.exe",
+    "C:\\Windows\\System32\\control.exe",
+    "C:\\Windows\\System32\\devmgmt.msc",
+    "C:\\Windows\\System32\\diskmgmt.msc",
+    "C:\\Windows\\System32\\regedit.exe",
+    "C:\\Windows\\System32\\compmgmt.msc",
+    "C:\\Windows\\System32\\mstsc.exe",
+    "C:\\Windows\\System32\\cmdkey.exe",
+    "C:\\Program Files\\Microsoft Office\\Office16\\ACCESS.EXE",
+    "C:\\Program Files\\Microsoft Office\\Office16\\ONENOTE.EXE",
+    "C:\\Program Files (x86)\\Google\\Update\\GoogleUpdate.exe",
+    "C:\\Program Files\\WinSCP\\WinSCP.exe"
+  ];
+
+  let progress = 1;
+  let fileIndex = 0;
+
+  // Fake upload progress simulation
+  const fakeUpload = setInterval(() => {
+    if (progress <= 100) {
+      // Update the progress bar width and status text
+      progressElement.style.width = progress + '%';
+      uploadStatus.textContent = `${progress}% - Uploading ${fakeFiles[fileIndex]}`;
+
+      // Change file names at every 10% progress
+      if (progress % 10 === 0 && fileIndex < fakeFiles.length - 1) {
+        fileIndex++;
+      }
+
+      progress++;
+    } else {
+      clearInterval(fakeUpload);
+      uploadStatus.textContent = 'Upload Complete';
+    }
+  }, 250); // Adjust the interval for faster or slower progress
+});
+
+</script>
